@@ -22,11 +22,12 @@ jobs:
 
       - name: Create EC2 Instance
         run: |
-          # Use AWS CLI to create an EC2 instance
+          # Use AWS CLI to create an EC2 instance with user data
           aws ec2 run-instances \
             --image-id ami-0005e0cfe09cc9050 \
             --instance-type t2.micro \
             --key-name hemakey \
-            --subnet-id subnet-03cea030789b37116 \
-            --security-group-ids sg-025e8d9ed9a75362a \
+            --subnet-id subnet-01cdfa5b762c5723e \
+            --security-group-ids sg-0a1004adb2e93c08b \
+            --user-data "$(base64 -w 0 user-data-script.sh)" \
             --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=Github}]"
