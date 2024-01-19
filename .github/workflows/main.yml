@@ -29,5 +29,5 @@ jobs:
             --key-name hemakey \
             --subnet-id subnet-03cea030789b37116 \
             --security-group-ids sg-025e8d9ed9a75362a \
-            --user-data "$(base64 -w 0 user-data-script.sh)" \
+            --user-data "$(base64 -w 0 userdata.sh)" \
             --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=Github}]"
