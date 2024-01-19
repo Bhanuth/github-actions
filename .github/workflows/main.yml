@@ -16,8 +16,8 @@ jobs:
       - name: Setup AWS CLI
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets. AKIATPAKWB7K6IR723XG}}
-          aws-secret-access-key: ${{ secrets. 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}}
+          aws-access-key-id: ${{ secrets.AKIATPAKWB7K6IR723XG }}
+          aws-secret-access-key: ${{ secrets.sinyCir6da0uDRAuAsQoknmHQe4C84qM/JyoBZvv }}
           aws-region: us-east-1
 
       - name: Create EC2 Instance
@@ -30,4 +30,3 @@ jobs:
             --subnet-id subnet-01cdfa5b762c5723e \
             --security-group-ids sg-0a1004adb2e93c08b \
             --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=Github}]"
-
